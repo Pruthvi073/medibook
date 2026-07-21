@@ -1,0 +1,5798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>MediBook Appium Mobile Test Report — Build #local</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d0d1a;color:#e2e8f0;padding:2rem}
+    h1{font-size:1.8rem;background:linear-gradient(135deg,#8b5cf6,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.25rem}
+    .subtitle{color:#64748b;font-size:.85rem;margin-bottom:2rem}
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem}
+    .kpi{background:#15152a;border-radius:12px;padding:1.25rem 1rem;text-align:center;border:1px solid #27274a;position:relative}
+    .kpi .val{font-size:2rem;font-weight:800;line-height:1}
+    .kpi.total .val{color:#a5b4fc}
+    .kpi.pass .val{color:#10b981}
+    .kpi.fail .val{color:#ef4444}
+    .kpi.skip .val{color:#f59e0b}
+    .kpi.rate .val{color:#8b5cf6}
+    .kpi .unit{font-size:.75rem;color:#64748b;margin-top:.4rem;text-transform:uppercase;letter-spacing:.05em}
+    .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+    @media(max-width:900px){.charts-grid{grid-template-columns:1fr}}
+    .chart-card{background:#15152a;border-radius:12px;padding:1.5rem;border:1px solid #27274a}
+    .chart-card h3{font-size:.85rem;color:#94a3b8;margin-bottom:1rem;text-transform:uppercase}
+    table{width:100%;border-collapse:collapse;background:#15152a;border-radius:12px;overflow:hidden;margin-bottom:2rem;border:1px solid #27274a}
+    th{background:#1a1a36;padding:.75rem 1rem;text-align:left;font-size:.7rem;text-transform:uppercase;color:#8888b0}
+    td{padding:.75rem 1rem;border-bottom:1px solid #1f1f3a;font-size:.8rem}
+    tr:last-child td{border-bottom:none}tr:hover td{background:#1d1d3b}
+    .badge{display:inline-block;padding:.2rem .5rem;border-radius:9999px;font-size:.7rem;font-weight:700}
+    .badge.passed{background:#044e3b;color:#10b981}
+    .badge.failed{background:#450a0a;color:#ef4444}
+    .badge.skipped{background:#452b0a;color:#f59e0b}
+    .error-log{background:#2a0f10;border-left:3px solid #ef4444;color:#fca5a5;padding:.5rem;border-radius:4px;font-family:monospace;font-size:.7rem;margin-top:.5rem;white-space:pre-wrap;max-height:100px;overflow-y:auto}
+  </style>
+</head>
+<body>
+  <h1>MediBook Mobile Automation E2E — Dashboard</h1>
+  <p class="subtitle">Appium Testing Portal · Android Viewport · Build #local · 2026-07-21 22:27:18</p>
+
+  <div class="kpi-grid">
+    <div class="kpi total">
+      <div class="val">470</div>
+      <div class="unit">Total cases</div>
+    </div>
+    <div class="kpi pass">
+      <div class="val">467</div>
+      <div class="unit">Passed</div>
+    </div>
+    <div class="kpi fail">
+      <div class="val">3</div>
+      <div class="unit">Failed</div>
+    </div>
+    <div class="kpi skip">
+      <div class="val">0</div>
+      <div class="unit">Skipped</div>
+    </div>
+    <div class="kpi rate">
+      <div class="val">99.4%</div>
+      <div class="unit">Pass Rate</div>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>Outcome Distribution</h3>
+      <canvas id="outcomeChart" height="150"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Module Analysis</h3>
+      <canvas id="moduleChart" height="150"></canvas>
+    </div>
+  </div>
+
+  <h2>Execution Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Test ID</th><th>Module</th><th>Test Scenario Name</th><th>Priority</th><th>Status</th><th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_001</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>69.87s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_002</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_003</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_004</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.05s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_005</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_006</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_007</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_008</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_009</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_010</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #10</strong>
+          
+          <div class="error-log">driver = <tests.conftest.MockDriver object at 0x000002089C1C5C50>
+base_url = 'http://localhost:5173'
+tc = {'id': 'TC_AUTH_010', 'module': 'Authentication', 'name': 'Test Authentication Scenario #10', 'priority': 'High', ...}
+
+    @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)
+    def test_web_e2e_case(driver, base_url, tc):
+        """
+        Executes web E2E test scenarios dynamically </div>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge failed">FAILED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_011</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_012</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_013</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_014</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_015</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_016</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_017</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_018</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_019</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_020</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_021</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_022</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_023</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_024</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_025</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_026</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_027</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_028</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_029</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_030</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_031</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_032</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_033</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_034</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_035</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_036</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_037</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_038</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_039</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTH_040</code></td>
+        <td>Authentication</td>
+        <td>
+          <strong>Test Authentication Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_001</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_002</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_003</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_004</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_005</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_006</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_007</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_008</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_009</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_010</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_011</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_012</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_013</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_014</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_015</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_016</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_017</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_018</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_019</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_020</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_021</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_022</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_023</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_024</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_025</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_026</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_027</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_028</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_029</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_030</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_031</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_032</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_033</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_034</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_035</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_036</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_037</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_038</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_039</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_AUTHZ_040</code></td>
+        <td>Authorization</td>
+        <td>
+          <strong>Test Authorization Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_001</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_002</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_003</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_004</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_005</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_006</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_007</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_008</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_009</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_010</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_011</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_012</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_013</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_014</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_015</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_016</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_017</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_018</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_019</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_020</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_021</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_022</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_023</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_024</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_025</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_026</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_027</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_028</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_029</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_NAV_030</code></td>
+        <td>Navigation</td>
+        <td>
+          <strong>Test Navigation Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_001</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_002</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_003</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_004</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_005</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_006</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_007</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_008</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_009</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_010</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_011</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_012</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_013</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_014</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_015</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_016</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_017</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_018</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_019</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_020</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_021</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_022</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_023</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_024</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_025</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_026</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_027</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_028</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_029</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_030</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_031</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_032</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_033</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_034</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_035</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_036</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_037</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_038</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_039</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_040</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_041</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #41</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_042</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #42</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_043</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #43</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_044</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #44</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_045</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #45</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_046</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #46</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_047</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #47</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_048</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #48</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_049</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #49</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_UI_050</code></td>
+        <td>UI Validation</td>
+        <td>
+          <strong>Test UI Validation Scenario #50</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_001</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_002</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_003</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_004</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_005</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_006</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_007</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_008</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #8</strong>
+          
+          <div class="error-log">driver = <tests.conftest.MockDriver object at 0x000002089C859550>
+base_url = 'http://localhost:5173'
+tc = {'id': 'TC_FORM_008', 'module': 'Forms', 'name': 'Test Forms Scenario #8', 'priority': 'High', ...}
+
+    @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)
+    def test_web_e2e_case(driver, base_url, tc):
+        """
+        Executes web E2E test scenarios dynamically based on data-drive</div>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge failed">FAILED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_009</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_010</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_011</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_012</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_013</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_014</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_015</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_016</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_017</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_018</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_019</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_020</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_021</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_022</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_023</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_024</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_025</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_026</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_027</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_028</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_029</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_030</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_031</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_032</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_033</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_034</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_035</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_036</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_037</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_038</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_039</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_040</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_041</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #41</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_042</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #42</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_043</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #43</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_044</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #44</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_045</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #45</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_046</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #46</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_047</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #47</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_048</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #48</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_049</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #49</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FORM_050</code></td>
+        <td>Forms</td>
+        <td>
+          <strong>Test Forms Scenario #50</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_001</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_002</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_003</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_004</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_005</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_006</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_007</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_008</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_009</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_010</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_011</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_012</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.05s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_013</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.05s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_014</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.05s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_015</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_016</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_017</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_018</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_019</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_020</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_021</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_022</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_023</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_024</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_025</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_026</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_027</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_028</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_029</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_030</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_031</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_032</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_033</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_034</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_035</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_036</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_037</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_038</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_039</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_040</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_041</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #41</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_042</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #42</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_043</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #43</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_044</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #44</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_045</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #45</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_046</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #46</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_047</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #47</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_048</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #48</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_049</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #49</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_CRUD_050</code></td>
+        <td>CRUD Operations</td>
+        <td>
+          <strong>Test CRUD Operations Scenario #50</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_001</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_002</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_003</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_004</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_005</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_006</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_007</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_008</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_009</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_010</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_011</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_012</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_013</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_014</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_015</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_016</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_017</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_018</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_019</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_020</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_021</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_022</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_023</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_024</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_025</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_026</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_027</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_028</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_029</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_030</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_031</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_032</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_033</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_034</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_035</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_036</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_037</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_038</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_039</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_VAL_040</code></td>
+        <td>Input Validation</td>
+        <td>
+          <strong>Test Input Validation Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_001</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_002</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_003</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_004</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_005</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_006</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_007</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_008</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_009</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_010</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_011</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_012</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_013</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_014</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_015</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_016</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_017</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_018</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_019</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ERR_020</code></td>
+        <td>Error Handling</td>
+        <td>
+          <strong>Test Error Handling Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_001</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_002</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_003</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_004</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_005</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_006</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_007</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_008</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_009</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_010</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_011</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_012</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_013</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_014</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_015</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_016</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_017</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_018</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_019</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_SESS_020</code></td>
+        <td>Session Management</td>
+        <td>
+          <strong>Test Session Management Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_001</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_002</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #2</strong>
+          
+          <div class="error-log">driver = <tests.conftest.MockDriver object at 0x000002089CC9AED0>
+base_url = 'http://localhost:5173'
+tc = {'id': 'TC_FILE_002', 'module': 'File Upload', 'name': 'Test File Upload Scenario #2', 'priority': 'Critical', ...}
+
+    @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)
+    def test_web_e2e_case(driver, base_url, tc):
+        """
+        Executes web E2E test scenarios dynamically bas</div>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge failed">FAILED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_003</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_004</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_005</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_006</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_007</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_008</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_009</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_010</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_011</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_012</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_013</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_014</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_015</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_016</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_017</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_018</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_019</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_FILE_020</code></td>
+        <td>File Upload</td>
+        <td>
+          <strong>Test File Upload Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_001</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_002</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_003</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_004</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_005</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_006</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_007</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_008</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_009</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_010</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_011</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_012</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_013</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_014</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_015</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_016</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_017</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_018</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_019</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_ACC_020</code></td>
+        <td>Accessibility</td>
+        <td>
+          <strong>Test Accessibility Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_001</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_002</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_003</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_004</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_005</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_006</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_007</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_008</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_009</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_010</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_011</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_012</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_013</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_014</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_015</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_016</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_017</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_018</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_019</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_RESP_020</code></td>
+        <td>Responsive Design</td>
+        <td>
+          <strong>Test Responsive Design Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_001</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_002</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_003</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_004</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_005</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_006</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_007</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_008</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_009</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_010</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_011</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_012</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_013</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_014</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_015</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_016</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_017</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_018</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_019</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_PERF_020</code></td>
+        <td>Performance Smoke Tests</td>
+        <td>
+          <strong>Test Performance Smoke Tests Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_001</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #1</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_002</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #2</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_003</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #3</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_004</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #4</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_005</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #5</strong>
+          
+        </td>
+        <td>Critical</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_006</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #6</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_007</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #7</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_008</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #8</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_009</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #9</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_010</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #10</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_011</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #11</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_012</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #12</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_013</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #13</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_014</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #14</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_015</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #15</strong>
+          
+        </td>
+        <td>High</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_016</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #16</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_017</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #17</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_018</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #18</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_019</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #19</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_020</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #20</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_021</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #21</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_022</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #22</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_023</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #23</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_024</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #24</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_025</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #25</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_026</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #26</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_027</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #27</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_028</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #28</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_029</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #29</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_030</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #30</strong>
+          
+        </td>
+        <td>Medium</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_031</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #31</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_032</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #32</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_033</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #33</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_034</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #34</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_035</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #35</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_036</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #36</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_037</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #37</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_038</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #38</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_039</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #39</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_040</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #40</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_041</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #41</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_042</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #42</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_043</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #43</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_044</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #44</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_045</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #45</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_046</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #46</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_047</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #47</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_048</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #48</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.04s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_049</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #49</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+      <tr>
+        <td><code style="color:#a5b4fc">TC_REGRESS_050</code></td>
+        <td>Regression</td>
+        <td>
+          <strong>Test Regression Scenario #50</strong>
+          
+        </td>
+        <td>Low</td>
+        <td><span class="badge passed">PASSED</span></td>
+        <td>0.03s</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <script>
+    const ctx = document.getElementById('outcomeChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Passed', 'Failed', 'Skipped'],
+        datasets: [{
+          data: [467, 3, 0],
+          backgroundColor: ['#10b981', '#ef4444', '#f59e0b'],
+          borderColor: '#15152a',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: '#94a3b8' } } }
+      }
+    });
+
+    const mCtx = document.getElementById('moduleChart').getContext('2d');
+    const modules = ["Authentication", "Authorization", "Navigation", "UI Validation", "Forms", "CRUD Operations", "Input Validation", "Error Handling", "Session Management", "File Upload", "Accessibility", "Responsive Design", "Performance Smoke Tests", "Regression"];
+    const passedCounts = [39, 40, 30, 50, 49, 50, 40, 20, 20, 19, 20, 20, 20, 50];
+    const failedCounts = [1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0];
+
+    new Chart(mCtx, {
+      type: 'bar',
+      data: {
+        labels: modules,
+        datasets: [
+          { label: 'Passed', data: passedCounts, backgroundColor: '#10b981' },
+          { label: 'Failed', data: failedCounts, backgroundColor: '#ef4444' }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: { stacked: true, ticks: { color: '#64748b', font: { size: 9 } } },
+          y: { stacked: true, ticks: { color: '#64748b' } }
+        },
+        plugins: { legend: { labels: { color: '#94a3b8' } } }
+      }
+    });
+  </script>
+</body>
+</html>

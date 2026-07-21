@@ -1,0 +1,7 @@
+# Load test generated output — excluded from git
+results/
+*.csv
+*.html
+*.xlsx
+__pycache__/
+*.pyc

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- GitHub Pages SPA redirect: restore route from query-string set by 404.html -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
+
+    <!-- ── SEO Meta Tags ────────────────────────────────────── -->
+    <title>MediBook — AI Disease Prediction</title>
+    <meta name="description" content="MediBook uses Machine Learning to provide instant preliminary disease predictions from your symptoms. Free, private, and built for everyone." />
+    <meta name="keywords"    content="disease prediction, symptom checker, machine learning, AI health, medical assistant, Random Forest, Naïve Bayes" />
+    <meta name="author"      content="MediBook Team" />
+
+    <!-- Open Graph (social sharing) -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="MediBook — AI Disease Prediction" />
+    <meta property="og:description" content="Select your symptoms and get instant ML-powered preliminary health insights." />
+
+    <!-- ── Favicon (inline SVG heart) ──────────────────────── -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236366f1'%3E%3Cpath fill-rule='evenodd' d='M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z' clip-rule='evenodd'/%3E%3C/svg%3E" />
+
+    <!-- ── Google Fonts: Inter ───────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

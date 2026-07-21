@@ -1,0 +1,10 @@
+{
+  "name": "medibook",
+  "version": "1.0.0",
+  "description": "MediBook Root Workspace Configuration",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend"
+  }
+}

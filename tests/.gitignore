@@ -1,0 +1,9 @@
+# Ignore generated test output (screenshots, reports) from git
+# These are uploaded as CI artifacts, not committed to the repo
+Test Results/
+test-results.json
+*.png
+*.xlsx
+__pycache__/
+.pytest_cache/
+*.pyc

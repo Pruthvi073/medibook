@@ -1,0 +1,13 @@
+# .gitignore additions for test results
+# Add to root .gitignore if one exists
+
+# ── Test result artifacts ─────────────────────────────────────
+tests/appium/Test Results/
+tests/Test Results/
+test-results.json
+appium.log
+*.pyc
+__pycache__/
+.pytest_cache/
+gh-pages-reports/
+gh-pages-site/

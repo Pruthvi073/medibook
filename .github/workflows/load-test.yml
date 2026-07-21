@@ -1,0 +1,325 @@
+name: 📊 Baseline Load Test (100 VU / 1 min)
+
+# ─────────────────────────────────────────────────────────────
+# Triggers
+# ─────────────────────────────────────────────────────────────
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      users:
+        description: "Number of virtual users (default: 100)"
+        required: false
+        default: "100"
+      duration:
+        description: "Test duration in seconds (default: 60)"
+        required: false
+        default: "60"
+
+permissions:
+  contents:  read
+  actions:   read
+
+env:
+  USERS:    ${{ github.event.inputs.users    || '100' }}
+  DURATION: ${{ github.event.inputs.duration || '60'  }}
+
+# ─────────────────────────────────────────────────────────────
+# JOBS
+# ─────────────────────────────────────────────────────────────
+jobs:
+  load-test:
+    name: 🚀 Load Test — ${{ github.event.inputs.users || '100' }} VU / ${{ github.event.inputs.duration || '60' }}s
+    runs-on: ubuntu-latest
+
+    services:
+      # ── MongoDB ───────────────────────────────────────────
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      # ── Checkout ─────────────────────────────────────────────
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Node.js + backend ────────────────────────────────────
+      - name: 🟢 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: backend/package-lock.json
+
+      - name: 📦 Install backend dependencies
+        working-directory: backend
+        run: npm ci --prefer-offline
+
+      # ── Write backend .env for CI ─────────────────────────
+      - name: ⚙️ Configure backend .env
+        working-directory: backend
+        run: |
+          cat > .env <<EOF
+          NODE_ENV=test
+          PORT=5000
+          MONGODB_URI=mongodb://localhost:27017/medibook_loadtest
+          JWT_SECRET=ci_load_test_secret_${{ github.run_id }}
+          ML_SERVICE_URL=http://localhost:5001
+          ALLOWED_ORIGINS=http://localhost:5173
+          GEMINI_API_KEY=
+          EOF
+
+      # ── Python for ML service + Locust ──────────────────────
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 📦 Install ML service dependencies
+        working-directory: ml_service
+        run: pip install -r requirements.txt
+
+      - name: 📦 Install load test dependencies
+        run: pip install -r tests/load/requirements.txt
+
+      # ── Start Flask ML service ───────────────────────────────
+      - name: 🤖 Start Flask ML service (background)
+        working-directory: ml_service
+        run: |
+          python app.py &
+          echo "Waiting for Flask..."
+          for i in $(seq 1 15); do
+            curl -s http://localhost:5001/health > /dev/null && \
+              echo "✅ Flask ready" && break || sleep 2
+          done
+
+      # ── Start Express backend ────────────────────────────────
+      - name: 🚀 Start Express backend (background)
+        working-directory: backend
+        run: |
+          node server.js &
+          echo "Waiting for Express..."
+          for i in $(seq 1 20); do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5000/api/symptoms || echo 000)
+            [ "$STATUS" = "200" ] && echo "✅ Express ready (HTTP $STATUS)" && break
+            echo "  Attempt $i: HTTP $STATUS"
+            sleep 3
+          done
+
+      # ── Create results directory ──────────────────────────────
+      - name: 📁 Create results directory
+        run: mkdir -p tests/load/results
+
+      # ── Run Locust load test ──────────────────────────────────
+      - name: 🔥 Run Locust baseline load test
+        run: |
+          python -m locust \
+            -f tests/load/locustfile.py \
+            --headless \
+            --host http://localhost:5000 \
+            --users       ${{ env.USERS }} \
+            --spawn-rate  10 \
+            --run-time    ${{ env.DURATION }}s \
+            --csv         tests/load/results/stats \
+            --html        tests/load/results/locust-native-report.html \
+            --csv-full-history \
+            --only-summary \
+            || true    # Don't fail workflow on Locust exit-1 (failures present)
+
+      # ── Print live summary to Actions logs ───────────────────
+      - name: 📋 Print load test summary
+        if: always()
+        run: |
+          CSV="tests/load/results/stats_stats.csv"
+          if [ -f "$CSV" ]; then
+            echo ""
+            echo "═══════════════════════════════════════════════════"
+            echo "  MEDIBOOK BASELINE LOAD TEST — RESULTS"
+            echo "═══════════════════════════════════════════════════"
+            python3 - <<'EOF'
+          import csv, os
+
+          csv_path = "tests/load/results/stats_stats.csv"
+          if not os.path.exists(csv_path):
+              print("  [warn] CSV not found")
+              exit()
+
+          with open(csv_path) as f:
+              rows = list(csv.DictReader(f))
+
+          t = next((r for r in rows if r.get("Name") in ("Aggregated","Total")), None)
+          if not t:
+              exit()
+
+          rps    = float(t.get("Requests/s", 0))
+          avg    = float(t.get("Average Response Time", 0))
+          mn     = float(t.get("Min Response Time", 0))
+          mx     = float(t.get("Max Response Time", 0))
+          p50    = float(t.get("50%", 0))
+          p90    = float(t.get("90%", 0))
+          p99    = float(t.get("99%", 0))
+          reqs   = int(t.get("Request Count", 0))
+          fails  = int(t.get("Failure Count", 0))
+          fp     = round(fails/reqs*100,1) if reqs else 0
+
+          verdict = "EXCELLENT" if avg < 300 and fp < 1 \
+                    else "GOOD" if avg < 800 and fp < 5 \
+                    else "ACCEPTABLE" if avg < 2000 else "SLOW"
+
+          print(f"  Throughput  : {rps:.1f} req/sec")
+          print(f"  Avg RT      : {avg:.0f} ms")
+          print(f"  Min RT      : {mn:.0f} ms")
+          print(f"  Max RT      : {mx:.0f} ms")
+          print(f"  P50         : {p50:.0f} ms")
+          print(f"  P90         : {p90:.0f} ms")
+          print(f"  P99         : {p99:.0f} ms")
+          print(f"  Requests    : {reqs}")
+          print(f"  Failures    : {fails} ({fp}%)")
+          print(f"  Verdict     : {verdict}")
+          EOF
+            echo "═══════════════════════════════════════════════════"
+          fi
+
+      # ── Generate rich HTML + Excel + Markdown reports ─────────
+      - name: 📊 Generate load test reports
+        if: always()
+        run: |
+          python tests/load/generate_load_report.py \
+            --csv-prefix  tests/load/results/stats \
+            --users       ${{ env.USERS }} \
+            --duration    ${{ env.DURATION }} \
+            --host        http://localhost:5000
+
+      # ── Upload all artifacts ──────────────────────────────────
+      - name: 📦 Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Load_Test_HTML_Report
+          path: tests/load/results/load-test-report.html
+          if-no-files-found: warn
+
+      - name: 📦 Upload Locust native report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Locust_Native_Report
+          path: tests/load/results/locust-native-report.html
+          if-no-files-found: warn
+
+      - name: 📦 Upload Excel report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Load_Test_Excel_Report
+          path: tests/load/results/Load_Test_Report.xlsx
+          if-no-files-found: warn
+
+      - name: 📦 Upload CSV stats
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Locust_CSV_Stats
+          path: tests/load/results/stats*.csv
+          if-no-files-found: warn
+
+      - name: 📦 Upload summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Load_Test_Summary
+          path: tests/load/results/summary.md
+          if-no-files-found: warn
+
+      # ── GitHub Actions Step Summary ───────────────────────────
+      - name: 📋 Publish GitHub Actions summary
+        if: always()
+        run: |
+          NOW=$(date -u +"%Y-%m-%d %H:%M UTC")
+          CSV="tests/load/results/stats_stats.csv"
+
+          python3 - <<EOF >> $GITHUB_STEP_SUMMARY
+          import csv, os, sys
+
+          csv_path = "tests/load/results/stats_stats.csv"
+          users     = "${{ env.USERS }}"
+          duration  = "${{ env.DURATION }}"
+          run_num   = "${{ github.run_number }}"
+
+          rows = []
+          if os.path.exists(csv_path):
+              with open(csv_path) as f:
+                  rows = list(csv.DictReader(f))
+
+          t = next((r for r in rows if r.get("Name") in ("Aggregated","Total")), {})
+
+          rps  = float(t.get("Requests/s", 0))
+          avg  = float(t.get("Average Response Time", 0))
+          mn   = float(t.get("Min Response Time", 0))
+          mx   = float(t.get("Max Response Time", 0))
+          p50  = float(t.get("50%", 0))
+          p90  = float(t.get("90%", 0))
+          p99  = float(t.get("99%", 0))
+          reqs = int(t.get("Request Count", 0))
+          fails= int(t.get("Failure Count", 0))
+          fp   = round(fails/reqs*100,1) if reqs else 0
+
+          verdict = ("✅ EXCELLENT" if avg < 300 and fp < 1
+                     else "✅ GOOD" if avg < 800 and fp < 5
+                     else "⚠️ ACCEPTABLE" if avg < 2000
+                     else "❌ SLOW / FAILING")
+
+          # Endpoint rows
+          ep_rows = [r for r in rows if r.get("Name") not in ("Aggregated","Total","")]
+
+          ep_table = ""
+          for ep in ep_rows:
+              n  = ep.get("Name","")
+              ea = float(ep.get("Average Response Time",0))
+              em = float(ep.get("Min Response Time",0))
+              ex = float(ep.get("Max Response Time",0))
+              ep90 = float(ep.get("90%",0))
+              er   = float(ep.get("Requests/s",0))
+              ep_table += f"| \`{n}\` | {ea:.0f} | {em:.0f} | {ex:.0f} | {ep90:.0f} | {er:.1f} |\n"
+
+          print(f"""# 📊 Baseline Load Test Summary
+
+          **Build:** #{run_num} | **Date:** $NOW | **Backend:** http://localhost:5000
+
+          ## ⚙️ Configuration
+
+          | Setting | Value |
+          |---------|-------|
+          | Virtual Users | **{users}** |
+          | Duration | **{duration}s** |
+          | Spawn Rate | 10 users/s |
+          | Total Requests | {reqs} |
+
+          ## 📈 Results
+
+          | Metric | Value |
+          |--------|-------|
+          | 🚀 RPS (avg) | **{rps:.1f} req/sec** |
+          | ⏱ Avg Response | **{avg:.0f} ms** |
+          | ⚡ Min Response | {mn:.0f} ms |
+          | 🐢 Max Response | {mx:.0f} ms |
+          | P50 (median) | {p50:.0f} ms |
+          | P90 | {p90:.0f} ms |
+          | P99 | {p99:.0f} ms |
+          | ❌ Failures | {fails} ({fp}%) |
+          | 🏆 Verdict | {verdict} |
+
+          ## 🔀 Per-Endpoint Breakdown
+
+          | Endpoint | Avg (ms) | Min | Max | P90 | RPS |
+          |----------|----------|-----|-----|-----|-----|
+          {ep_table}
+          """)
+          EOF
