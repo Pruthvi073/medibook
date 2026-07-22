@@ -65,7 +65,7 @@ class TestAccessibilitySEO:
         page = LoginPage(driver, base_url)
         page.open()
         btn = driver.find_element(By.ID, "btn-login")
-        text = btn.text.strip()
+        text = (btn.text or btn.get_attribute("textContent") or btn.get_attribute("innerText") or "").strip()
         assert len(text) > 0, "Login button should have text content"
         log.info(f"PASS TC-SEO-06: Login button text = '{text}'.")
 
