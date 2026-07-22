@@ -145,7 +145,7 @@ jobs:
         run: |
           npx preview --port 5173 &
           echo "Waiting for server on port 5173..."
-          npx wait-on http://localhost:5173 --timeout 30000
+          npx -y wait-on http://localhost:5173 --timeout 30000
 
       - name: 🧪 Run Pytest Web E2E Suite
         env:
@@ -211,7 +211,7 @@ jobs:
         working-directory: frontend
         run: |
           npx preview --port 5173 &
-          npx wait-on http://localhost:5173 --timeout 30000
+          npx -y wait-on http://localhost:5173 --timeout 30000
 
       - name: ⚙️ Generate Test Cases Dataset
         run: python automation/utils/generate_test_cases.py
