@@ -20,6 +20,8 @@ class BasePage:
 
     # ── Navigation ────────────────────────────────────────────
     def goto(self, path: str = ""):
+        if path.startswith("/") and not path.startswith("/#"):
+            path = f"/#{path}"
         url = f"{self.base_url}{path}"
         log.info(f"[nav] → {url}")
         self.driver.get(url)

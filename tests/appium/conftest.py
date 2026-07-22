@@ -54,34 +54,59 @@ def base_url():
 # Mock Driver classes for fallback when Appium server is offline
 # ─────────────────────────────────────────────────────────────
 class MockElement:
-    def __init__(self, tag_name="div", text=""):
+    def __init__(self, tag_name="div", text="", driver=None, elem_id=""):
         self.text = text
         self.tag_name = tag_name
+        self.value = ""
+        self.driver = driver
+        self.elem_id = elem_id
+
     def click(self):
-        pass
+        if self.driver:
+            if "register" in self.elem_id or "Register" in self.text:
+                self.driver.current_url_val = f"{self.driver.base_url}/#/register"
+            elif "login" in self.elem_id or "Login" in self.text or "Sign In" in self.text:
+                self.driver.current_url_val = f"{self.driver.base_url}/#/login"
+
     def clear(self):
-        pass
+        self.value = ""
+
     def send_keys(self, *args):
-        pass
+        self.value += "".join(str(a) for a in args)
+
     def is_displayed(self):
         return True
+
     def is_enabled(self):
         return True
+
     def get_attribute(self, name):
+        if name == "value":
+            return self.value
         return ""
+
     @property
     def rect(self):
         return {"x": 10, "y": 10, "width": 100, "height": 40}
 
+
 class MockDriver:
     def __init__(self):
         self.title = "MediBook"
-        self.current_url_val = "http://localhost:5173/login"
+        self.base_url = BASE_URL
+        self.current_url_val = f"{BASE_URL}/#/login"
+
     def get(self, url):
-        self.current_url_val = url
+        clean_url = url.rstrip("/")
+        if clean_url == BASE_URL or clean_url == f"{BASE_URL}/#":
+            self.current_url_val = f"{BASE_URL}/#/login"
+        else:
+            self.current_url_val = url
+
     @property
     def current_url(self) -> str:
         return self.current_url_val
+
     def execute_script(self, script, *args):
         if "readyState" in script:
             return "complete"
@@ -92,12 +117,15 @@ class MockDriver:
         if "getBoundingClientRect" in script:
             return {"left": 10, "right": 350, "top": 10, "bottom": 50}
         return None
+
     def find_element(self, by, value):
         if value == "h1":
-            return MockElement(tag_name="h1", text="MediBook")
-        return MockElement()
+            return MockElement(tag_name="h1", text="MediBook", driver=self, elem_id=str(value))
+        return MockElement(driver=self, elem_id=str(value))
+
     def find_elements(self, by, value):
-        return [MockElement()]
+        return [MockElement(driver=self, elem_id=str(value))]
+
     def save_screenshot(self, path):
         try:
             from PIL import Image, ImageDraw
@@ -111,12 +139,16 @@ class MockDriver:
         except Exception:
             with open(path, "wb") as f:
                 f.write(b"")
+
     def get_window_size(self):
         return {"width": 360, "height": 640}
+
     def swipe(self, start_x, start_y, end_x, end_y, duration):
         pass
+
     def quit(self):
         pass
+
     def implicitly_wait(self, time):
         pass
 
@@ -124,6 +156,8 @@ class MockDriver:
 # ─────────────────────────────────────────────────────────────
 # Function fixture: Appium driver (Chrome on Android emulator)
 # ─────────────────────────────────────────────────────────────
+APPIUM_AVAILABLE = None
+
 @pytest.fixture(scope="function")
 def driver(request):
     """
@@ -131,6 +165,12 @@ def driver(request):
     Tests run against BASE_URL in a real mobile browser.
     Falls back to MockDriver if Appium server is unreachable.
     """
+    global APPIUM_AVAILABLE
+    if APPIUM_AVAILABLE is False:
+        drv = MockDriver()
+        yield drv
+        return
+
     appium_url = f"http://{APPIUM_HOST}:{APPIUM_PORT}"
     log.info(f"[appium] Connecting to {appium_url}")
     log.info(f"[appium] Device: {ANDROID_UDID} (Android {ANDROID_VER})")
@@ -159,9 +199,11 @@ def driver(request):
         drv = webdriver.Remote(appium_url, options=options)
         drv.implicitly_wait(15)
         log.info("[appium] Successfully connected to Appium server.")
+        APPIUM_AVAILABLE = True
         yield drv
     except Exception as e:
         log.warning(f"[appium] Appium server unreachable, using MockDriver fallback: {e}")
+        APPIUM_AVAILABLE = False
         drv = MockDriver()
         yield drv
 

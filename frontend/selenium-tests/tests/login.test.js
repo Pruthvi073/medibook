@@ -40,7 +40,7 @@ describe('MediBook E2E Login Scenarios', function () {
     
     const emailField = await driver.wait(until.elementLocated(By.id('email')), 5000);
     const passwordField = await driver.findElement(By.id('password'));
-    const submitButton = await driver.findElement(By.id('login-button'));
+    const submitButton = await driver.findElement(By.id('btn-login'));
 
     assert.ok(emailField, 'Email entry is missing from document');
     assert.ok(passwordField, 'Password entry is missing from document');
@@ -58,7 +58,7 @@ describe('MediBook E2E Login Scenarios', function () {
 
     const emailField = await driver.findElement(By.id('email'));
     const passwordField = await driver.findElement(By.id('password'));
-    const submitButton = await driver.findElement(By.id('login-button'));
+    const submitButton = await driver.findElement(By.id('btn-login'));
 
     await emailField.sendKeys('malicious@attack.org');
     await passwordField.sendKeys('guessme123');

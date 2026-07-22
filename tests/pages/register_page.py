@@ -9,7 +9,7 @@ class RegisterPage(BasePage):
     EMAIL_INPUT    = (By.ID,  "email")
     PASSWORD_INPUT = (By.ID,  "password")
     SUBMIT_BTN     = (By.ID,  "btn-register")
-    LOGIN_LINK     = (By.CSS_SELECTOR, "a[href*='login']")
+    LOGIN_LINK     = (By.ID, "link-to-login")
     HEADING        = (By.TAG_NAME, "h1")
     ERROR_MSG      = (By.CSS_SELECTOR, ".text-rose-400, [role='alert']")
 

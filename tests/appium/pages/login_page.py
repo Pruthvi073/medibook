@@ -7,7 +7,7 @@ class MobileLoginPage(MobileBasePage):
     EMAIL_INPUT    = (By.ID,  "email")
     PASSWORD_INPUT = (By.ID,  "password")
     SUBMIT_BTN     = (By.ID,  "btn-login")
-    REGISTER_LINK  = (By.CSS_SELECTOR, "a[href*='register']")
+    REGISTER_LINK  = (By.ID, "link-to-register")
     HEADING        = (By.TAG_NAME, "h1")
     ERROR_MSG      = (By.CSS_SELECTOR, ".text-rose-400, [role='alert']")
 

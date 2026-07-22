@@ -62,8 +62,15 @@ def driver(request):
     options.add_argument("--lang=en-US")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
 
-    service = Service(ChromeDriverManager().install())
-    drv = webdriver.Chrome(service=service, options=options)
+    try:
+        drv = webdriver.Chrome(options=options)
+    except Exception:
+        try:
+            service = Service(ChromeDriverManager().install())
+            drv = webdriver.Chrome(service=service, options=options)
+        except Exception as e:
+            log.warning(f"[selenium] Chrome init failed: {e}")
+            raise e
     drv.implicitly_wait(IMPLICIT_WAIT)
     drv.set_page_load_timeout(PAGE_TIMEOUT)
 

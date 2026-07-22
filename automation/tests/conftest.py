@@ -84,7 +84,7 @@ def base_url():
 
 CHROME_AVAILABLE = None
 
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="module")
 def driver(request):
     """
     Standard Selenium Headless Chrome Driver setup.
@@ -105,19 +105,25 @@ def driver(request):
 
     drv = None
     try:
-        # Resolve ChromeDriver via webdriver-manager
-        driver_path = ChromeDriverManager().install()
-        service = Service(driver_path)
-        drv = webdriver.Chrome(service=service, options=chrome_opts)
+        drv = webdriver.Chrome(options=chrome_opts)
         drv.implicitly_wait(8)
         log.info("[selenium] Chrome successfully initialized in Headless mode.")
         CHROME_AVAILABLE = True
         yield drv
-    except Exception as e:
-        log.warning(f"[selenium] Local Chrome init failed, using MockDriver fallback: {e}")
-        CHROME_AVAILABLE = False
-        drv = MockDriver()
-        yield drv
+    except Exception as e1:
+        try:
+            driver_path = ChromeDriverManager().install()
+            service = Service(driver_path)
+            drv = webdriver.Chrome(service=service, options=chrome_opts)
+            drv.implicitly_wait(8)
+            log.info("[selenium] Chrome initialized via ChromeDriverManager.")
+            CHROME_AVAILABLE = True
+            yield drv
+        except Exception as e2:
+            log.warning(f"[selenium] Local Chrome init failed, using MockDriver fallback: {e1} | {e2}")
+            CHROME_AVAILABLE = False
+            drv = MockDriver()
+            yield drv
 
     # Failure screenshot
     if hasattr(request.node, "rep_call") and request.node.rep_call.failed:

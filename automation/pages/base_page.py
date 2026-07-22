@@ -18,6 +18,8 @@ class WebBasePage:
         self.wait     = WebDriverWait(driver, self.TIMEOUT)
 
     def goto(self, path: str = ""):
+        if path.startswith("/") and not path.startswith("/#"):
+            path = f"/#{path}"
         url = f"{self.base_url}{path}"
         log.info(f"[web-nav] -> {url}")
         self.driver.get(url)

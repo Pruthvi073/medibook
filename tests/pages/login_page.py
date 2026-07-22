@@ -9,7 +9,7 @@ class LoginPage(BasePage):
     PASSWORD_INPUT = (By.ID,   "password")
     SUBMIT_BTN     = (By.ID,   "btn-login")
     ERROR_MSG      = (By.CSS_SELECTOR, "[role='alert'], .text-rose-400")
-    REGISTER_LINK  = (By.CSS_SELECTOR, "a[href*='register']")
+    REGISTER_LINK  = (By.ID, "link-to-register")
     HEADING        = (By.TAG_NAME, "h1")
 
     def open(self):

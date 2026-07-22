@@ -87,7 +87,7 @@ export default function RegisterPage() {
                   </svg>
                 </span>
                 <input
-                  id="reg-name"
+                  id="name"
                   type="text"
                   name="name"
                   autoComplete="name"
@@ -101,7 +101,7 @@ export default function RegisterPage() {
 
             {/* Email */}
             <div>
-              <label htmlFor="reg-email" className="form-label">Email address</label>
+              <label htmlFor="email" className="form-label">Email address</label>
               <div className="relative">
                 <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                   </svg>
                 </span>
                 <input
-                  id="reg-email"
+                  id="email"
                   type="email"
                   name="email"
                   autoComplete="email"
@@ -123,7 +123,7 @@ export default function RegisterPage() {
 
             {/* Password */}
             <div>
-              <label htmlFor="reg-password" className="form-label">Password</label>
+              <label htmlFor="password" className="form-label">Password</label>
               <div className="relative">
                 <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,7 +131,7 @@ export default function RegisterPage() {
                   </svg>
                 </span>
                 <input
-                  id="reg-password"
+                  id="password"
                   type={showPass ? 'text' : 'password'}
                   name="password"
                   autoComplete="new-password"
@@ -159,7 +159,7 @@ export default function RegisterPage() {
 
             {/* Confirm password */}
             <div>
-              <label htmlFor="reg-confirm" className="form-label">Confirm password</label>
+              <label htmlFor="confirm" className="form-label">Confirm password</label>
               <div className="relative">
                 <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -167,7 +167,7 @@ export default function RegisterPage() {
                   </svg>
                 </span>
                 <input
-                  id="reg-confirm"
+                  id="confirm"
                   type={showPass ? 'text' : 'password'}
                   name="confirm"
                   autoComplete="new-password"
@@ -181,7 +181,7 @@ export default function RegisterPage() {
 
             {/* Submit */}
             <button
-              id="btn-register-submit"
+              id="btn-register"
               type="submit"
               disabled={loading}
               className="btn-primary w-full mt-2"
