@@ -78,6 +78,7 @@ jobs:
       # Stage 10: Verify Appium Health
       - name: Stage 9 & 10 - Start and Verify Appium Server
         run: |
+          mkdir -p automation/logs automation/reports
           npm install -g appium
           appium driver install uiautomator2 || true
           # Start appium in background on port 4723
