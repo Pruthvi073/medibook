@@ -1,0 +1,8 @@
+# Exclude E2E execution artifacts
+data/
+reports/
+*.json
+*.xlsx
+*.html
+__pycache__/
+*.pyc
