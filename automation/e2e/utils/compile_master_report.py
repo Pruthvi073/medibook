@@ -148,7 +148,7 @@ def compile_reports(run_number: str, base_url: str):
             if json_path.exists():
                 with open(json_path, "r", encoding="utf-8") as f:
                     cases = json.load(f)
-                for c in cases[:10]: # Add top 10 as detail rows to save space, standard sheet structure
+                for c in cases: # Add all 300 test cases per domain to details sheet
                     ws_detail.append([c["id"], c["module"], c["name"], c["priority"], c["expected"], c["status"]])
                     
         excel_out = str(REPORTS_DIR / "Master_Automation_Report.xlsx")
