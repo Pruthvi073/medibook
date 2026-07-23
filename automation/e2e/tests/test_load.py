@@ -2,21 +2,13 @@
 test_load.py — Parameterised performance metrics, throughput targets, and response-time parameters.
 Loads 300 performance/load test cases.
 """
-import json
 import logging
 import pytest
-from pathlib import Path
+from automation.e2e.data.cases import PERFORMANCE_CASES
 
 log = logging.getLogger(__name__)
 
-def load_cases():
-    json_path = Path(__file__).parent.parent / "data" / "performance_cases.json"
-    if not json_path.exists():
-        return []
-    with open(json_path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-TEST_CASES = load_cases()
+TEST_CASES = PERFORMANCE_CASES
 TEST_IDS = [tc["id"] for tc in TEST_CASES]
 
 @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)

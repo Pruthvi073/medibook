@@ -2,21 +2,13 @@
 test_unit.py — Parameterised API Unit checks.
 Loads 300 API test cases and validates response codes, schemas, and logic.
 """
-import json
 import logging
 import pytest
-from pathlib import Path
+from automation.e2e.data.cases import UNIT_CASES
 
 log = logging.getLogger(__name__)
 
-def load_cases():
-    json_path = Path(__file__).parent.parent / "data" / "unit_cases.json"
-    if not json_path.exists():
-        return []
-    with open(json_path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-TEST_CASES = load_cases()
+TEST_CASES = UNIT_CASES
 TEST_IDS = [tc["id"] for tc in TEST_CASES]
 
 @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)

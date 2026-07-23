@@ -2,21 +2,13 @@
 test_validation.py — Parameterised input validation and validation boundary checks.
 Loads 300 validation test cases and checks sanitization filters.
 """
-import json
 import logging
 import pytest
-from pathlib import Path
+from automation.e2e.data.cases import VALIDATION_CASES
 
 log = logging.getLogger(__name__)
 
-def load_cases():
-    json_path = Path(__file__).parent.parent / "data" / "validation_cases.json"
-    if not json_path.exists():
-        return []
-    with open(json_path, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-TEST_CASES = load_cases()
+TEST_CASES = VALIDATION_CASES
 TEST_IDS = [tc["id"] for tc in TEST_CASES]
 
 @pytest.mark.parametrize("tc", TEST_CASES, ids=TEST_IDS)
