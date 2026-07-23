@@ -48,6 +48,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
 
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
+
       - name: 🧪 Execute Selenium Test Suite
         run: |
           pytest automation/e2e/tests/test_selenium.py --json-report --json-report-file=selenium-results.json || true
@@ -78,6 +82,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
+
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
 
       - name: 🧪 Execute Appium Test Suite
         run: |
@@ -110,6 +118,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
 
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
+
       - name: 🧪 Execute API Unit Test Suite
         run: |
           pytest automation/e2e/tests/test_unit.py --json-report --json-report-file=unit-results.json || true
@@ -140,6 +152,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
+
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
 
       - name: 🧪 Execute Validation Test Suite
         run: |
@@ -172,6 +188,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
 
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
+
       - name: 🧪 Execute Deployment Checks
         run: |
           pytest automation/e2e/tests/test_deployment.py --json-report --json-report-file=deployment-results.json || true
@@ -202,6 +222,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pytest pytest-json-report openpyxl jinja2 Pillow
+
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
 
       - name: 🧪 Execute Performance checks
         run: |
@@ -241,6 +265,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: ./downloaded-results
+
+      - name: ⚙️ Generate E2E Test Cases Dataset
+        run: |
+          python automation/e2e/generate_e2e_cases.py
 
       - name: 📊 Compile Master Execution Report
         run: |
